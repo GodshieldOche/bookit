@@ -13,7 +13,7 @@ module.exports = {
     SMTP_PASSWORD: '4b643f9767fd73',
     SMTP_FROM_NAME: 'BookIT',
     SMTP_FROM_EMAIL: 'noreply@bookit.com',
-    NEXTAUTH_URL: "https://bookit.vercel.app"
+    NEXTAUTH_URL: "https://bookit-rust.vercel.app"  
   },
   images: {
     domains: ['res.cloudinary.com'],
