@@ -3,6 +3,7 @@ import { deleteRoom, getSingleRoom, updateRoom } from '../../../controllers/room
 import dbConnect from '../../../config/dbConnect';
 import onError from '../../../middleware/errors'
 import { isAuthenticatedUser, authorizeRoles } from '../../../middleware/auth';
+import { config } from '../../../config/bodyparser'
 
 
 
@@ -14,12 +15,5 @@ handler.use(isAuthenticatedUser, authorizeRoles('admin')).put(updateRoom)
 handler.use(isAuthenticatedUser, authorizeRoles('admin')).delete(deleteRoom)
 
 
-export const config = {
-    api: {
-        bodyParser: {
-            sizeLimit: '100mb',
-        },
-    },
-}
 
-export default handler
+export default config(handler)
