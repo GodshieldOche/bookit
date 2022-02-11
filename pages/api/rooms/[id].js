@@ -11,9 +11,9 @@ const handler = nc({onError})
 
 dbConnect()
 handler.get(getSingleRoom)
-handler.use(isAuthenticatedUser, authorizeRoles('admin')).put(updateRoom)
+handler.use(config, isAuthenticatedUser, authorizeRoles('admin')).put(updateRoom)
 handler.use(isAuthenticatedUser, authorizeRoles('admin')).delete(deleteRoom)
 
 
 
-export default config(handler)
+export default handler
