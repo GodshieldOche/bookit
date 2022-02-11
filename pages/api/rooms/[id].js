@@ -4,6 +4,13 @@ import dbConnect from '../../../config/dbConnect';
 import onError from '../../../middleware/errors'
 import { isAuthenticatedUser, authorizeRoles } from '../../../middleware/auth';
 
+export const config = {
+    api: {
+        bodyParser: {
+            sizeLimit: '100mb',
+        },
+    },
+}
 
 const handler = nc({onError})
 
